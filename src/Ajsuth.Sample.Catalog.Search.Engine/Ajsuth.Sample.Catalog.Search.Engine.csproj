@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Sitecore Commerce Plugin Catalog</Description>
+    <Authors>Andrew Sutherland</Authors>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageTags>$(PackageTags);Commerce;Plugin;Catalog;</PackageTags>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Commerce.Core" Version="7.0.*" />
+    <PackageReference Include="Sitecore.Commerce.Plugin.Catalog" Version="7.0.*" />
+    <PackageReference Include="Sitecore.Commerce.Plugin.Inventory" Version="7.0.*" />
+    <PackageReference Include="Sitecore.Commerce.Plugin.Management" Version="7.0.*" />
+    <PackageReference Include="Sitecore.Commerce.Plugin.Views" Version="7.0.*" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>NU1603,NU5048</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>NU1603,NU5048</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+</Project>
