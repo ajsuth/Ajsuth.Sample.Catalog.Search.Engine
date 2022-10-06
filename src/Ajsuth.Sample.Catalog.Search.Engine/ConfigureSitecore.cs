@@ -39,6 +39,10 @@ namespace Ajsuth.Sample.Catalog.Search.Engine
                 .ConfigurePipeline<IFullIndexMinionPipeline>(pipeline => pipeline
                     .Add<Pipelines.Blocks.InitializeExtendedSellableItemIndexingViewBlock>().After<InitializeSellableItemIndexingViewBlock>()
                 )
+
+                .ConfigurePipeline<ISearchPipeline>(pipeline => pipeline
+                    .Replace<Sitecore.Commerce.Plugin.Catalog.ProcessDocumentSearchResultBlock, Pipelines.Blocks.ProcessDocumentSearchResultBlock>()
+                )
             );
 
             services.RegisterAllCommands(assembly);
